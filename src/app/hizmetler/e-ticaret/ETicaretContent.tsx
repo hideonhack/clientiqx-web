@@ -6,24 +6,24 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#10B981";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function ECommerceMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #34D399, #6EE7B7)`,
         }}
       />
 
-      {/* Browser window */}
+      {/* Browser window with product grid */}
       <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
         <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
@@ -32,45 +32,85 @@ function WebMockUI() {
           <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
         </div>
         <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div
-              className="h-16 rounded-lg"
-              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
-            />
-            <div className="h-16 bg-foreground/[0.04] rounded-lg" />
+          {/* Search bar */}
+          <div className="h-4 bg-foreground/8 rounded w-full" />
+          {/* Product grid */}
+          <div className="grid grid-cols-2 gap-2">
+            <div className="space-y-1.5">
+              <div
+                className="h-14 rounded-lg"
+                style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+              />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
+            <div className="space-y-1.5">
+              <div className="h-14 bg-foreground/[0.04] rounded-lg" />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
+            <div className="space-y-1.5">
+              <div className="h-14 bg-foreground/[0.04] rounded-lg" />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
+            <div className="space-y-1.5">
+              <div
+                className="h-14 rounded-lg"
+                style={{ backgroundColor: `${SERVICE_COLOR}10` }}
+              />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
+      {/* Sidebar — cart / checkout */}
+      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+        <div
+          className="h-8 flex items-center gap-1.5 px-3"
+          style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+        >
+          {/* Cart icon placeholder */}
+          <div
+            className="h-3.5 w-3.5 rounded-full"
+            style={{ backgroundColor: `${SERVICE_COLOR}60` }}
+          />
+          <div className="h-3 w-16 bg-foreground/10 rounded" />
         </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
+        <div className="p-3 space-y-2.5">
+          {/* Cart item 1 */}
+          <div className="flex gap-2 items-center">
+            <div
+              className="w-8 h-8 rounded-lg flex-shrink-0"
+              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+            />
+            <div className="flex-1 space-y-1">
+              <div className="h-2 bg-foreground/10 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
           </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
+          {/* Cart item 2 */}
+          <div className="flex gap-2 items-center">
+            <div className="w-8 h-8 rounded-lg flex-shrink-0 bg-foreground/[0.04]" />
+            <div className="flex-1 space-y-1">
+              <div className="h-2 bg-foreground/10 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
           </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
+          {/* Divider */}
+          <div className="h-px bg-foreground/10" />
+          {/* Total */}
+          <div className="flex justify-between items-center">
+            <div className="h-2.5 bg-foreground/10 rounded w-12" />
+            <div className="h-2.5 bg-foreground/15 rounded w-16" />
           </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
-          </div>
+          {/* Checkout button */}
+          <div
+            className="h-7 rounded-lg"
+            style={{ backgroundColor: `${SERVICE_COLOR}40` }}
+          />
         </div>
       </div>
 
@@ -103,19 +143,18 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                E-Ticaret
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              Online satışlarınızı bir üst seviyeye taşıyın
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              Özel e-ticaret platformları, güvenli ödeme entegrasyonları ve
+              akıllı stok yönetimi ile online satışlarınızı büyütüyoruz.
+              Headless mimari ve modern teknolojilerle rakiplerinizden öne geçin.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +200,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <ECommerceMockUI />
             </div>
           </div>
         </div>
@@ -176,62 +215,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "platform",
+    title: "Özel E-Ticaret Platformları",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "İhtiyaçlarınıza özel, ölçeklenebilir e-ticaret altyapıları geliştiriyoruz.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "payment",
+    title: "Ödeme Sistemi Entegrasyonu",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Stripe, iyzico ve banka entegrasyonları ile güvenli ödeme altyapıları.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "stock",
+    title: "Stok & Sipariş Yönetimi",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "Gerçek zamanlı stok takibi, otomatik sipariş yönetimi ve depo optimizasyonu.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "marketplace",
+    title: "Pazar Yeri Entegrasyonu",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "Trendyol, Hepsiburada, Amazon ve diğer pazar yerlerine entegrasyon.",
   },
   {
-    icon: "api",
-    title: "API & Backend Geliştirme",
+    icon: "seo",
+    title: "E-Ticaret SEO",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Ürün sayfası optimizasyonu, yapısal veri ve teknik SEO ile görünürlüğünüzü artırın.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "analytics",
+    title: "Müşteri Analitik & CRM",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "Müşteri davranış analizi, segmentasyon ve kişiselleştirilmiş pazarlama.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-        </svg>
-      );
-    case "saas":
+    case "platform":
       return (
         <svg
           width="24"
@@ -247,7 +271,7 @@ function CapabilityIcon({ type }: { type: string }) {
           <circle cx="15" cy="15" r="2" />
         </svg>
       );
-    case "cart":
+    case "payment":
       return (
         <svg
           width="24"
@@ -258,12 +282,13 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
+          <rect x="2" y="5" width="20" height="14" rx="2" />
+          <path d="M2 10h20" />
+          <path d="M6 15h4" />
+          <path d="M14 15h4" />
         </svg>
       );
-    case "pwa":
+    case "stock":
       return (
         <svg
           width="24"
@@ -274,12 +299,12 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
         </svg>
       );
-    case "api":
+    case "marketplace":
       return (
         <svg
           width="24"
@@ -290,12 +315,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-          <line x1="14" y1="4" x2="10" y2="20" />
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
         </svg>
       );
-    case "performance":
+    case "seo":
       return (
         <svg
           width="24"
@@ -306,7 +330,24 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          <line x1="8" y1="11" x2="14" y2="11" />
+          <line x1="11" y1="8" x2="11" y2="14" />
+        </svg>
+      );
+    case "analytics":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <path d="M18 20V10M12 20V4M6 20v-6" />
         </svg>
       );
     default:
@@ -329,11 +370,12 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Uçtan uca e-ticaret çözümleri
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          Ödeme entegrasyonundan pazar yeri bağlantılarına, stok yönetiminden
+          müşteri analitiğine kadar online satışlarınızı büyütecek tüm araçları
+          sunuyoruz.
         </p>
 
         {/* 3x2 grid */}
@@ -485,16 +527,16 @@ function TechIcon({ name }: { name: string }) {
 }
 
 const techStack = [
-  { name: "react", label: "React" },
   { name: "next", label: "Next.js" },
+  { name: "react", label: "React" },
+  { name: "stripe", label: "Stripe" },
   { name: "node", label: "Node.js" },
+  { name: "postgresql", label: "PostgreSQL" },
   { name: "typescript", label: "TypeScript" },
   { name: "tailwind", label: "Tailwind CSS" },
-  { name: "python", label: "Python" },
   { name: "aws", label: "AWS" },
   { name: "docker", label: "Docker" },
-  { name: "postgresql", label: "PostgreSQL" },
-  { name: "stripe", label: "Stripe" },
+  { name: "python", label: "Python" },
 ];
 
 function TechStackSection() {
@@ -543,33 +585,33 @@ function TechStackSection() {
 const processSteps = [
   {
     num: "01",
-    title: "Keşif",
+    title: "İhtiyaç Analizi",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "İş modelinizi, hedef kitlenizi ve rekabet ortamını analiz ediyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Mağaza Tasarımı",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "Yüksek dönüşüm odaklı UI/UX tasarımı ve kullanıcı akışları oluşturuyoruz.",
   },
   {
     num: "03",
-    title: "Geliştirme",
+    title: "Entegrasyon",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "Ödeme, kargo, muhasebe ve pazar yeri entegrasyonlarını tamamlıyoruz.",
   },
   {
     num: "04",
     title: "Test",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Yük testleri, güvenlik taramaları ve ödeme akış testleri yapıyoruz.",
   },
   {
     num: "05",
     title: "Lansman",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "Sorunsuz go-live, performans izleme ve lansman sonrası destek sağlıyoruz.",
   },
 ];
 
@@ -591,8 +633,8 @@ function ProcessTimeline() {
           Fikirden lansmanına, adım adım
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Şeffaf ve öngörülebilir bir süreç ile e-ticaret projenizi zamanında ve
+          bütçe dahilinde teslim ediyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +689,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function ETicaretContent() {
   return (
     <div className="min-h-screen">
       <Header />

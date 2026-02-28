@@ -70,7 +70,7 @@ export default function CTASection() {
       <FloatingShapes />
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-        <h2 className="font-serif text-[40px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-white max-w-3xl mb-5">
+        <h2 className="font-bold text-[40px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-white max-w-3xl mb-5">
           İşletmenizin dijital dönüşümüne başlamaya hazır mısınız?
         </h2>
         <p className="text-[17px] text-white/60 leading-relaxed max-w-2xl mb-12">

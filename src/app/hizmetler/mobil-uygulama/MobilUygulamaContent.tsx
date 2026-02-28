@@ -6,71 +6,61 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#8B5CF6";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function PhoneMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #A78BFA, #C4B5FD)`,
         }}
       />
 
-      {/* Browser window */}
-      <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
+      {/* Phone 1 — left */}
+      <div className="absolute top-[8%] left-[14%] w-[30%] h-[78%] bg-foreground/90 rounded-[20px] shadow-2xl overflow-hidden border-2 border-foreground/20">
+        <div className="h-5 bg-foreground flex items-center justify-center">
+          <div className="w-12 h-1.5 bg-white/15 rounded-full" />
         </div>
-        <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
+        <div className="bg-white h-full p-2 space-y-2">
+          <div
+            className="h-20 rounded-lg"
+            style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+          />
+          <div className="h-3 bg-foreground/8 rounded w-3/4" />
+          <div className="h-2 bg-foreground/5 rounded w-full" />
+          <div className="grid grid-cols-2 gap-1.5 mt-2">
+            <div className="h-10 bg-foreground/[0.04] rounded-md" />
             <div
-              className="h-16 rounded-lg"
-              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+              className="h-10 rounded-md"
+              style={{ backgroundColor: `${SERVICE_COLOR}12` }}
             />
-            <div className="h-16 bg-foreground/[0.04] rounded-lg" />
           </div>
         </div>
       </div>
 
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
+      {/* Phone 2 — right */}
+      <div className="absolute top-[14%] right-[14%] w-[30%] h-[72%] bg-foreground/90 rounded-[20px] shadow-2xl overflow-hidden border-2 border-foreground/20">
+        <div className="h-5 bg-foreground flex items-center justify-center">
+          <div className="w-12 h-1.5 bg-white/15 rounded-full" />
         </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
+        <div className="bg-white/95 h-full p-2 space-y-2">
+          <div className="flex items-center gap-2 mb-2">
+            <div
+              className="w-6 h-6 rounded-full"
+              style={{ backgroundColor: `${SERVICE_COLOR}25` }}
+            />
+            <div className="h-2 bg-foreground/10 rounded w-1/2" />
           </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
-          </div>
+          <div className="h-16 bg-foreground/[0.04] rounded-lg" />
+          <div className="h-2 bg-foreground/6 rounded w-full" />
+          <div className="h-2 bg-foreground/4 rounded w-2/3" />
         </div>
       </div>
 
@@ -103,19 +93,19 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                Mobil Uygulama
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              iOS ve Android&apos;de fark yaratan mobil deneyimler
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              iOS ve Android platformlarında native ve cross-platform mobil
+              uygulamalar geliştiriyoruz. Kullanıcı odaklı tasarım, yüksek
+              performans ve sorunsuz kullanıcı deneyimi ile markanızı mobilde
+              güçlendiriyoruz.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +151,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <PhoneMockUI />
             </div>
           </div>
         </div>
@@ -176,94 +166,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "ios",
+    title: "iOS Uygulama Geliştirme",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "Swift ve SwiftUI ile native, performanslı iOS uygulamaları geliştiriyoruz.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "android",
+    title: "Android Uygulama Geliştirme",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Kotlin ile modern Material Design Android uygulamaları.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "cross",
+    title: "Cross-Platform Çözümler",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "React Native ve Flutter ile tek kod tabanından iki platforma ulaşın.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "palette",
+    title: "Mobil UI/UX Tasarım",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "Platform kurallarına uygun, kullanıcı odaklı mobil arayüz tasarımı.",
   },
   {
     icon: "api",
-    title: "API & Backend Geliştirme",
+    title: "Backend & API Entegrasyonu",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Mobil uygulamalar için güvenli, ölçeklenebilir API ve backend altyapıları.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "store",
+    title: "Uygulama Mağazası Yönetimi",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "App Store ve Google Play yayınlama, ASO ve süreç yönetimi.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-        </svg>
-      );
-    case "saas":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <rect x="3" y="3" width="18" height="18" rx="3" />
-          <path d="M3 9h18M9 3v18" />
-          <circle cx="15" cy="15" r="2" />
-        </svg>
-      );
-    case "cart":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
-        </svg>
-      );
-    case "pwa":
+    case "ios":
       return (
         <svg
           width="24"
@@ -276,7 +219,58 @@ function CapabilityIcon({ type }: { type: string }) {
         >
           <rect x="5" y="2" width="14" height="20" rx="2" />
           <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
+        </svg>
+      );
+    case "android":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <rect x="4" y="10" width="16" height="10" rx="2" />
+          <path d="M8 10V7a4 4 0 018 0v3" />
+          <circle cx="9" cy="6" r="0.8" fill="currentColor" />
+          <circle cx="15" cy="6" r="0.8" fill="currentColor" />
+          <path d="M5 20v3M19 20v3M3 14h2M19 14h2" strokeLinecap="round" />
+        </svg>
+      );
+    case "cross":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <rect x="3" y="5" width="8" height="14" rx="1.5" />
+          <rect x="13" y="5" width="8" height="14" rx="1.5" />
+          <path d="M7 19h.01M17 19h.01" strokeWidth="2" strokeLinecap="round" />
+          <path d="M9 12h6" strokeDasharray="2 2" />
+        </svg>
+      );
+    case "palette":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.7 0 3-1.3 3-3 0-.8-.3-1.5-.8-2-.5-.5-.8-1.2-.8-2 0-1.7 1.3-3 3-3h3.5c2.5 0 4.1-2.5 3-4.6C21.1 4.1 16.9 2 12 2z" />
+          <circle cx="7.5" cy="11" r="1.5" fill="currentColor" />
+          <circle cx="10.5" cy="7" r="1.5" fill="currentColor" />
+          <circle cx="15" cy="7.5" r="1.5" fill="currentColor" />
         </svg>
       );
     case "api":
@@ -295,7 +289,7 @@ function CapabilityIcon({ type }: { type: string }) {
           <line x1="14" y1="4" x2="10" y2="20" />
         </svg>
       );
-    case "performance":
+    case "store":
       return (
         <svg
           width="24"
@@ -306,7 +300,15 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <path d="M3 9l1-4h16l1 4" />
+          <path d="M3 9v11a1 1 0 001 1h16a1 1 0 001-1V9" />
+          <path d="M3 9h18" />
+          <path d="M9 21V13h6v8" />
+          <path d="M7 9v2a2 2 0 01-4 0" />
+          <path d="M11 9v2a2 2 0 01-4 0" />
+          <path d="M15 9v2a2 2 0 01-4 0" />
+          <path d="M19 9v2a2 2 0 01-4 0" />
+          <path d="M21 9v2a2 2 0 01-4 0" />
         </svg>
       );
     default:
@@ -329,11 +331,12 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Her platforma uygun mobil çözümler
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          Native iOS ve Android uygulamalarından cross-platform çözümlere,
+          mobil UI/UX tasarımından mağaza yönetimine kadar eksiksiz hizmet
+          sunuyoruz.
         </p>
 
         {/* 3x2 grid */}
@@ -388,22 +391,40 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    next: {
-      color: "#000",
+    flutter: {
+      color: "#02569B",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="10" fill="#000" />
-          <path d="M16.5 18.5L10 10v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-          <path d="M14 8v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M14 2L4 12l3.5 3.5L18 5h-4z" fill="#02569B" />
+          <path d="M14 12l-3.5 3.5L14 19h4l-3.5-3.5L18 12h-4z" fill="#02569B" />
+          <path d="M10.5 15.5L14 19h4l-7-7z" fill="#02569B" fillOpacity="0.6" />
         </svg>
       ),
     },
-    node: {
-      color: "#339933",
+    swift: {
+      color: "#FA7343",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" fillOpacity="0.15" stroke="#339933" strokeWidth="1.3" />
-          <text x="12" y="15" textAnchor="middle" fill="#339933" fontSize="9" fontWeight="bold">JS</text>
+          <path d="M20.2 17.2c.1-.5.2-1 .2-1.6 0-3.1-1.7-6.5-4.8-9.1 1.5 2.2 2.3 4.7 2 6.8-2.6-1.8-4.8-4.3-6.4-6.5.8 1.5 1.8 3 3 4.3-1.5-1-4.5-3.6-5.3-4.3 0 0 2.5 3.3 4.8 5.5-2.3-1-4.2-2.5-5.8-4.2.3.9.8 1.7 1.5 2.5 1.5 1.8 3.5 3.3 5.7 4.2-2.3.8-4.8.5-7-.5 4 2.7 9.3 2.8 12.5-.2l-.2.1c.3-.2.5-.4.8-.7 1-.9 1.5-2 1.5-3.2" fill="#FA7343" />
+        </svg>
+      ),
+    },
+    kotlin: {
+      color: "#7F52FF",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M4 4h16L12 12l8 8H4V4z" fill="#7F52FF" />
+          <path d="M4 4h8l-8 8V4z" fill="#7F52FF" fillOpacity="0.6" />
+        </svg>
+      ),
+    },
+    firebase: {
+      color: "#FFCA28",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M5.5 20L7.5 3.5l4.5 8-3 2.5L5.5 20z" fill="#FFA000" />
+          <path d="M9 14l3-2.5 6.5 8.5H5.5L9 14z" fill="#FFCA28" />
+          <path d="M12 11.5L9 14l-1.5-6.5L12 11.5z" fill="#FF6F00" />
         </svg>
       ),
     },
@@ -416,20 +437,12 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    tailwind: {
-      color: "#06B6D4",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
-          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
-        </svg>
-      ),
-    },
-    python: {
-      color: "#3776AB",
+    node: {
+      color: "#339933",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2c-3 0-5 1-5 3.5V8h5v1H6c-2 0-4 1.5-4 4.5S4 18 6 18h2v-2.5c0-2 1.5-3.5 3.5-3.5h5c1.5 0 3-1 3-2.5V5.5C19.5 3 17 2 12 2zm-2.5 2a1 1 0 110 2 1 1 0 010-2z" fill="#3776AB" />
-          <path d="M12 22c3 0 5-1 5-3.5V16h-5v-1h6c2 0 4-1.5 4-4.5S20 6 18 6h-2v2.5c0 2-1.5 3.5-3.5 3.5h-5c-1.5 0-3 1-3 2.5v4.5C4.5 21 7 22 12 22zm2.5-2a1 1 0 110-2 1 1 0 010 2z" fill="#FFD43B" />
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" fillOpacity="0.15" stroke="#339933" strokeWidth="1.3" />
+          <text x="12" y="15" textAnchor="middle" fill="#339933" fontSize="9" fontWeight="bold">JS</text>
         </svg>
       ),
     },
@@ -443,36 +456,25 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    docker: {
-      color: "#2496ED",
+    dart: {
+      color: "#0175C2",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="11" width="3" height="2.5" rx="0.3" fill="#2496ED" />
-          <rect x="7" y="11" width="3" height="2.5" rx="0.3" fill="#2496ED" />
-          <rect x="11" y="11" width="3" height="2.5" rx="0.3" fill="#2496ED" />
-          <rect x="7" y="8" width="3" height="2.5" rx="0.3" fill="#2496ED" />
-          <rect x="11" y="8" width="3" height="2.5" rx="0.3" fill="#2496ED" />
-          <rect x="11" y="5" width="3" height="2.5" rx="0.3" fill="#2496ED" />
-          <path d="M1 13.5c1-2 3-2.5 5-2.5h14c2 0 3 2 2.5 4-1 4-5 6-10.5 6S2 18 1 13.5z" stroke="#2496ED" strokeWidth="1.2" fill="none" />
+          <path d="M7 4l10 0 5 5v10l-5 3H7l-3-3V7l3-3z" fill="#0175C2" fillOpacity="0.15" stroke="#0175C2" strokeWidth="1.3" />
+          <text x="12" y="15" textAnchor="middle" fill="#0175C2" fontSize="7" fontWeight="bold">Dart</text>
         </svg>
       ),
     },
-    postgresql: {
-      color: "#336791",
+    figma: {
+      color: "#F24E1E",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <ellipse cx="12" cy="7" rx="8" ry="4" stroke="#336791" strokeWidth="1.3" />
-          <path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7" stroke="#336791" strokeWidth="1.3" />
-          <path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4" stroke="#336791" strokeWidth="1.3" />
-        </svg>
-      ),
-    },
-    stripe: {
-      color: "#635BFF",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="4" fill="#635BFF" />
-          <path d="M12.5 8c-2 0-3 .8-3 2.2 0 2.6 4 2 4 3.6 0 .6-.6 1-1.5 1-1.2 0-2.3-.5-3-1.2v2.2c.8.5 1.8.7 3 .7 2 0 3.2-.8 3.2-2.3 0-2.7-4-2-4-3.5 0-.5.5-.9 1.3-.9 1 0 2 .4 2.7 1V9c-.8-.6-1.8-.9-2.7-.9z" fill="#fff" />
+          <circle cx="15" cy="9" r="3" fill="#1ABCFE" />
+          <path d="M12 6a3 3 0 00-3 3 3 3 0 003 3h0V6z" fill="#A259FF" />
+          <path d="M12 12a3 3 0 00-3 3 3 3 0 003 3h0v-6z" fill="#0ACF83" />
+          <path d="M12 18a3 3 0 00-3 3 3 3 0 106 0 3 3 0 00-3-3z" fill="#0ACF83" />
+          <path d="M12 6a3 3 0 01-3-3 3 3 0 016 0 3 3 0 01-3 3z" fill="#FF7262" />
+          <path d="M9 6a3 3 0 000 6h3V6H9z" fill="#A259FF" />
         </svg>
       ),
     },
@@ -485,16 +487,16 @@ function TechIcon({ name }: { name: string }) {
 }
 
 const techStack = [
-  { name: "react", label: "React" },
-  { name: "next", label: "Next.js" },
-  { name: "node", label: "Node.js" },
+  { name: "react", label: "React Native" },
+  { name: "flutter", label: "Flutter" },
+  { name: "swift", label: "Swift" },
+  { name: "kotlin", label: "Kotlin" },
+  { name: "firebase", label: "Firebase" },
   { name: "typescript", label: "TypeScript" },
-  { name: "tailwind", label: "Tailwind CSS" },
-  { name: "python", label: "Python" },
+  { name: "node", label: "Node.js" },
   { name: "aws", label: "AWS" },
-  { name: "docker", label: "Docker" },
-  { name: "postgresql", label: "PostgreSQL" },
-  { name: "stripe", label: "Stripe" },
+  { name: "dart", label: "Dart" },
+  { name: "figma", label: "Figma" },
 ];
 
 function TechStackSection() {
@@ -545,31 +547,31 @@ const processSteps = [
     num: "01",
     title: "Keşif",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "Kullanıcı ihtiyaçlarını, platform gereksinimlerini ve iş hedeflerini analiz ediyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Prototip",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "Wireframe ve interaktif prototipler ile uygulama akışını doğruluyoruz.",
   },
   {
     num: "03",
     title: "Geliştirme",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "Agile sprintler ile native veya cross-platform geliştirme yapıyoruz.",
   },
   {
     num: "04",
     title: "Test",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Cihaz uyumluluk testleri, performans testleri ve beta süreçleri yürütüyoruz.",
   },
   {
     num: "05",
-    title: "Lansman",
+    title: "Yayınlama",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "App Store ve Google Play&apos;e yayınlama, izleme ve güncelleme desteği.",
   },
 ];
 
@@ -588,11 +590,11 @@ function ProcessTimeline() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Fikirden lansmanına, adım adım
+          Fikirden mağazalara, adım adım
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Şeffaf ve öngörülebilir bir süreç ile mobil uygulamanızı zamanında ve
+          bütçe dahilinde teslim ediyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +649,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function MobilUygulamaContent() {
   return (
     <div className="min-h-screen">
       <Header />

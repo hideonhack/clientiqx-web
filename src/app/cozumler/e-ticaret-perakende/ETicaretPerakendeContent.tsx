@@ -6,70 +6,90 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#EC4899";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function ETicaretMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #F472B6, #FB7185)`,
         }}
       />
 
-      {/* Browser window */}
-      <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+      {/* Store front */}
+      <div className="absolute top-[10%] left-[6%] w-[55%] h-[68%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
         <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
+          <div className="ml-3 h-4 w-28 bg-gray-200/80 rounded-full" />
         </div>
         <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div
-              className="h-16 rounded-lg"
-              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
-            />
-            <div className="h-16 bg-foreground/[0.04] rounded-lg" />
+          <div className="h-3 bg-foreground/8 rounded w-1/3" />
+          {/* Product grid */}
+          <div className="grid grid-cols-3 gap-2">
+            <div className="space-y-1.5">
+              <div
+                className="h-14 rounded-lg"
+                style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+              />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
+            <div className="space-y-1.5">
+              <div className="h-14 bg-foreground/[0.06] rounded-lg" />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
+            <div className="space-y-1.5">
+              <div
+                className="h-14 rounded-lg"
+                style={{ backgroundColor: `${SERVICE_COLOR}10` }}
+              />
+              <div className="h-2 bg-foreground/8 rounded w-3/4" />
+              <div className="h-2 bg-foreground/5 rounded w-1/2" />
+            </div>
           </div>
+          <div className="h-8 rounded-lg" style={{ backgroundColor: `${SERVICE_COLOR}12` }} />
         </div>
       </div>
 
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
-        </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
+      {/* Cart / order panel */}
+      <div className="absolute top-[18%] right-[5%] w-[40%] h-[52%] bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+        <div className="p-4 space-y-3">
+          <div className="h-3 bg-foreground/8 rounded w-1/2" />
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <div
+                className="w-8 h-8 rounded"
+                style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+              />
+              <div className="flex-1 space-y-1">
+                <div className="h-2 bg-foreground/8 rounded w-2/3" />
+                <div className="h-2 bg-foreground/5 rounded w-1/3" />
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-foreground/[0.06] rounded" />
+              <div className="flex-1 space-y-1">
+                <div className="h-2 bg-foreground/8 rounded w-3/4" />
+                <div className="h-2 bg-foreground/5 rounded w-1/3" />
+              </div>
+            </div>
           </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
+          <div className="border-t border-foreground/10 pt-2 space-y-1">
+            <div className="h-2 bg-foreground/5 rounded w-full" />
+            <div
+              className="h-8 rounded-lg mt-2"
+              style={{ backgroundColor: `${SERVICE_COLOR}20` }}
+            />
           </div>
         </div>
       </div>
@@ -103,19 +123,18 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                E-Ticaret &amp; Perakende
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              Çok kanallı satış stratejisiyle büyüyün
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              Online mağaza, fiziksel POS, pazar yerleri ve sosyal ticaret
+              kanallarını tek bir platformda birleştirin. Stok, sipariş ve
+              müşteri yönetimini merkezi olarak kontrol edin.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +180,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <ETicaretMockUI />
             </div>
           </div>
         </div>
@@ -176,47 +195,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "omnichannel",
+    title: "Omnichannel Satış",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "Online ve offline tüm satış kanallarını tek platformda yönetin.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "pos",
+    title: "POS Entegrasyonu",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Fiziksel mağaza POS sistemlerinizi e-ticaret altyapınızla entegre edin.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "inventory",
+    title: "Stok & Depo Yönetimi",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "Çok lokasyonlu stok takibi, otomatik sipariş ve depo optimizasyonu.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "loyalty",
+    title: "Müşteri Sadakat Programları",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "Puan sistemi, özel kampanyalar ve kişiselleştirilmiş teklifler.",
   },
   {
-    icon: "api",
-    title: "API & Backend Geliştirme",
+    icon: "marketplace",
+    title: "Pazar Yeri Entegrasyonu",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Trendyol, Hepsiburada, Amazon ve N11 entegrasyonları.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "analytics",
+    title: "Satış Analitiği",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "Kanal bazlı performans, müşteri davranışı ve gelir analizi dashboardları.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
+    case "omnichannel":
       return (
         <svg
           width="24"
@@ -231,7 +250,7 @@ function CapabilityIcon({ type }: { type: string }) {
           <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
         </svg>
       );
-    case "saas":
+    case "pos":
       return (
         <svg
           width="24"
@@ -242,12 +261,13 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="3" y="3" width="18" height="18" rx="3" />
-          <path d="M3 9h18M9 3v18" />
-          <circle cx="15" cy="15" r="2" />
+          <rect x="2" y="3" width="20" height="18" rx="2" />
+          <line x1="2" y1="9" x2="22" y2="9" />
+          <rect x="6" y="13" width="4" height="3" rx="0.5" />
+          <rect x="14" y="13" width="4" height="3" rx="0.5" />
         </svg>
       );
-    case "cart":
+    case "inventory":
       return (
         <svg
           width="24"
@@ -258,12 +278,12 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
+          <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
         </svg>
       );
-    case "pwa":
+    case "loyalty":
       return (
         <svg
           width="24"
@@ -274,12 +294,10 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
+          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
         </svg>
       );
-    case "api":
+    case "marketplace":
       return (
         <svg
           width="24"
@@ -290,12 +308,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-          <line x1="14" y1="4" x2="10" y2="20" />
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
         </svg>
       );
-    case "performance":
+    case "analytics":
       return (
         <svg
           width="24"
@@ -306,7 +323,7 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <path d="M18 20V10M12 20V4M6 20v-6" />
         </svg>
       );
     default:
@@ -329,11 +346,12 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Perakende ve e-ticarette uçtan uca çözümler
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          Online mağazadan fiziksel satış noktasına, pazar yeri
+          entegrasyonlarından sadakat programlarına kadar tüm perakende
+          ihtiyaçlarınızı karşılıyoruz.
         </p>
 
         {/* 3x2 grid */}
@@ -407,29 +425,31 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
+    stripe: {
+      color: "#635BFF",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <rect x="3" y="3" width="18" height="18" rx="4" fill="#635BFF" />
+          <path d="M12.5 8c-2 0-3 .8-3 2.2 0 2.6 4 2 4 3.6 0 .6-.6 1-1.5 1-1.2 0-2.3-.5-3-1.2v2.2c.8.5 1.8.7 3 .7 2 0 3.2-.8 3.2-2.3 0-2.7-4-2-4-3.5 0-.5.5-.9 1.3-.9 1 0 2 .4 2.7 1V9c-.8-.6-1.8-.9-2.7-.9z" fill="#fff" />
+        </svg>
+      ),
+    },
+    postgresql: {
+      color: "#336791",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="7" rx="8" ry="4" stroke="#336791" strokeWidth="1.3" />
+          <path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7" stroke="#336791" strokeWidth="1.3" />
+          <path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4" stroke="#336791" strokeWidth="1.3" />
+        </svg>
+      ),
+    },
     typescript: {
       color: "#3178C6",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6" />
           <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">TS</text>
-        </svg>
-      ),
-    },
-    tailwind: {
-      color: "#06B6D4",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
-          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
-        </svg>
-      ),
-    },
-    python: {
-      color: "#3776AB",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2c-3 0-5 1-5 3.5V8h5v1H6c-2 0-4 1.5-4 4.5S4 18 6 18h2v-2.5c0-2 1.5-3.5 3.5-3.5h5c1.5 0 3-1 3-2.5V5.5C19.5 3 17 2 12 2zm-2.5 2a1 1 0 110 2 1 1 0 010-2z" fill="#3776AB" />
-          <path d="M12 22c3 0 5-1 5-3.5V16h-5v-1h6c2 0 4-1.5 4-4.5S20 6 18 6h-2v2.5c0 2-1.5 3.5-3.5 3.5h-5c-1.5 0-3 1-3 2.5v4.5C4.5 21 7 22 12 22zm2.5-2a1 1 0 110-2 1 1 0 010 2z" fill="#FFD43B" />
         </svg>
       ),
     },
@@ -457,22 +477,20 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    postgresql: {
-      color: "#336791",
+    python: {
+      color: "#3776AB",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <ellipse cx="12" cy="7" rx="8" ry="4" stroke="#336791" strokeWidth="1.3" />
-          <path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7" stroke="#336791" strokeWidth="1.3" />
-          <path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4" stroke="#336791" strokeWidth="1.3" />
+          <path d="M12 2c-3 0-5 1-5 3.5V8h5v1H6c-2 0-4 1.5-4 4.5S4 18 6 18h2v-2.5c0-2 1.5-3.5 3.5-3.5h5c1.5 0 3-1 3-2.5V5.5C19.5 3 17 2 12 2zm-2.5 2a1 1 0 110 2 1 1 0 010-2z" fill="#3776AB" />
+          <path d="M12 22c3 0 5-1 5-3.5V16h-5v-1h6c2 0 4-1.5 4-4.5S20 6 18 6h-2v2.5c0 2-1.5 3.5-3.5 3.5h-5c-1.5 0-3 1-3 2.5v4.5C4.5 21 7 22 12 22zm2.5-2a1 1 0 110-2 1 1 0 010 2z" fill="#FFD43B" />
         </svg>
       ),
     },
-    stripe: {
-      color: "#635BFF",
+    tailwind: {
+      color: "#06B6D4",
       svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="4" fill="#635BFF" />
-          <path d="M12.5 8c-2 0-3 .8-3 2.2 0 2.6 4 2 4 3.6 0 .6-.6 1-1.5 1-1.2 0-2.3-.5-3-1.2v2.2c.8.5 1.8.7 3 .7 2 0 3.2-.8 3.2-2.3 0-2.7-4-2-4-3.5 0-.5.5-.9 1.3-.9 1 0 2 .4 2.7 1V9c-.8-.6-1.8-.9-2.7-.9z" fill="#fff" />
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
+          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
         </svg>
       ),
     },
@@ -488,13 +506,13 @@ const techStack = [
   { name: "react", label: "React" },
   { name: "next", label: "Next.js" },
   { name: "node", label: "Node.js" },
+  { name: "stripe", label: "Stripe" },
+  { name: "postgresql", label: "PostgreSQL" },
   { name: "typescript", label: "TypeScript" },
-  { name: "tailwind", label: "Tailwind CSS" },
-  { name: "python", label: "Python" },
   { name: "aws", label: "AWS" },
   { name: "docker", label: "Docker" },
-  { name: "postgresql", label: "PostgreSQL" },
-  { name: "stripe", label: "Stripe" },
+  { name: "python", label: "Python" },
+  { name: "tailwind", label: "Tailwind CSS" },
 ];
 
 function TechStackSection() {
@@ -543,33 +561,33 @@ function TechStackSection() {
 const processSteps = [
   {
     num: "01",
-    title: "Keşif",
+    title: "Kanal Analizi",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "Mevcut satış kanallarınızı ve operasyonel süreçlerinizi analiz ediyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Platform Tasarımı",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "Omnichannel mimari, entegrasyon haritası ve UX tasarımı planlıyoruz.",
   },
   {
     num: "03",
-    title: "Geliştirme",
+    title: "Entegrasyon",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "POS, pazar yeri, ödeme ve kargo entegrasyonlarını kuruyoruz.",
   },
   {
     num: "04",
     title: "Test",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Kanal arası veri tutarlılığı, yük testleri ve kullanıcı kabul testleri.",
   },
   {
     num: "05",
     title: "Lansman",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "Kademeli kanal açılışı, ekip eğitimi ve performans izleme.",
   },
 ];
 
@@ -588,11 +606,11 @@ function ProcessTimeline() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Fikirden lansmanına, adım adım
+          Omnichannel başarıya giden yol
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Kanal analizinden lansmanına kadar tüm süreçlerde yanınızda olarak
+          perakende operasyonlarınızı dijitalleştiriyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +665,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function ETicaretPerakendeContent() {
   return (
     <div className="min-h-screen">
       <Header />

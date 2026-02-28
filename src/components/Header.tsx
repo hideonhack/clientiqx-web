@@ -21,37 +21,39 @@ interface SolutionItem {
   title: string;
   description: string;
   color: string;
+  href?: string;
 }
 
 interface ResourceItem {
   icon: string;
   title: string;
   description: string;
+  href?: string;
 }
 
 const servicesData: ServiceItem[] = [
   { icon: "globe", title: "Web Geliştirme", description: "Modern ve ölçeklenebilir web uygulamaları", color: "#424874", href: "/hizmetler/web-gelistirme" },
-  { icon: "phone", title: "Mobil Uygulama", description: "iOS ve Android'de yüksek performans", color: "#8B5CF6" },
-  { icon: "sparkle", title: "Yapay Zeka & ML", description: "AI ile iş süreçlerini otomatikleştirin", color: "#F59E0B" },
-  { icon: "cart", title: "E-Ticaret", description: "Online satışlarınızı artırın", color: "#10B981" },
-  { icon: "database", title: "ERP & CRM", description: "Kurumsal kaynak ve müşteri yönetimi", color: "#6366F1" },
-  { icon: "palette", title: "UI/UX Tasarım", description: "Kullanıcı merkezli dijital deneyim", color: "#EC4899" },
-  { icon: "briefcase", title: "Danışmanlık", description: "Dijital dönüşüm stratejisi ve proje yönetimi", color: "#A16207" },
+  { icon: "phone", title: "Mobil Uygulama", description: "iOS ve Android'de yüksek performans", color: "#8B5CF6", href: "/hizmetler/mobil-uygulama" },
+  { icon: "sparkle", title: "Yapay Zeka & ML", description: "AI ile iş süreçlerini otomatikleştirin", color: "#F59E0B", href: "/hizmetler/yapay-zeka" },
+  { icon: "cart", title: "E-Ticaret", description: "Online satışlarınızı artırın", color: "#10B981", href: "/hizmetler/e-ticaret" },
+  { icon: "database", title: "ERP & CRM", description: "Kurumsal kaynak ve müşteri yönetimi", color: "#6366F1", href: "/hizmetler/erp-crm" },
+  { icon: "palette", title: "UI/UX Tasarım", description: "Kullanıcı merkezli dijital deneyim", color: "#EC4899", href: "/hizmetler/ui-ux-tasarim" },
+  { icon: "briefcase", title: "Danışmanlık", description: "Dijital dönüşüm stratejisi ve proje yönetimi", color: "#A16207", href: "/hizmetler/danismanlik" },
 ];
 
 const solutionsData: SolutionItem[] = [
-  { icon: "target", title: "Satış & Pazarlama", description: "Potansiyel müşterileri yakalayın, satış süreçlerini otomatikleştirin", color: "#F59E0B" },
-  { icon: "headset", title: "Müşteri Hizmetleri", description: "7/24 kesintisiz profesyonel müşteri deneyimi", color: "#3B82F6" },
-  { icon: "heart", title: "Sağlık", description: "Randevu yönetimi, hasta takibi ve otomasyon", color: "#10B981" },
-  { icon: "shield", title: "Finans", description: "Güvenli finansal işlem altyapıları", color: "#6366F1" },
-  { icon: "store", title: "E-Ticaret & Perakende", description: "Çok kanallı satış ve stok yönetimi", color: "#EC4899" },
+  { icon: "target", title: "Satış & Pazarlama", description: "Potansiyel müşterileri yakalayın, satış süreçlerini otomatikleştirin", color: "#F59E0B", href: "/cozumler/satis-pazarlama" },
+  { icon: "headset", title: "Müşteri Hizmetleri", description: "7/24 kesintisiz profesyonel müşteri deneyimi", color: "#3B82F6", href: "/cozumler/musteri-hizmetleri" },
+  { icon: "heart", title: "Sağlık", description: "Randevu yönetimi, hasta takibi ve otomasyon", color: "#10B981", href: "/cozumler/saglik" },
+  { icon: "shield", title: "Finans", description: "Güvenli finansal işlem altyapıları", color: "#6366F1", href: "/cozumler/finans" },
+  { icon: "store", title: "E-Ticaret & Perakende", description: "Çok kanallı satış ve stok yönetimi", color: "#EC4899", href: "/cozumler/e-ticaret-perakende" },
 ];
 
 const resourcesData: ResourceItem[] = [
-  { icon: "pen", title: "Blog", description: "Teknoloji ve yazılım üzerine güncel içerikler" },
-  { icon: "lifebuoy", title: "Destek Merkezi", description: "Teknik destek ve yardım" },
-  { icon: "mail", title: "İletişim", description: "Bizimle iletişime geçin" },
-  { icon: "building", title: "Hakkımızda", description: "ClientIQX'i daha yakından tanıyın" },
+  { icon: "pen", title: "Blog", description: "Teknoloji ve yazılım üzerine güncel içerikler", href: "/blog" },
+  { icon: "lifebuoy", title: "Destek Merkezi", description: "Teknik destek ve yardım", href: "/destek" },
+  { icon: "mail", title: "İletişim", description: "Bizimle iletişime geçin", href: "/iletisim" },
+  { icon: "building", title: "Hakkımızda", description: "ClientIQX'i daha yakından tanıyın", href: "/hakkimizda" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -309,7 +311,7 @@ function SolutionsMenu() {
           {solutionsData.map((item) => (
             <Link
               key={item.title}
-              href="#"
+              href={item.href || "#"}
               className="group flex items-start gap-3.5 p-3 -mx-3 rounded-xl hover:bg-black/[0.03] transition-colors duration-150"
             >
               <div
@@ -367,7 +369,7 @@ function ResourcesMenu() {
         {resourcesData.map((item) => (
           <Link
             key={item.title}
-            href="#"
+            href={item.href || "#"}
             className="group flex items-start gap-3.5 p-3 -mx-3 rounded-xl hover:bg-black/[0.03] transition-colors duration-150"
           >
             <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 bg-foreground/[0.04]">
@@ -532,11 +534,11 @@ export default function Header() {
             <Link href="#" className="px-3 py-1.5 text-[14px] text-foreground/60 hover:text-foreground transition-colors duration-150">
               Hizmetleri keşfet
             </Link>
-            <Link href="#" className="px-3 py-1.5 text-[14px] text-foreground/60 hover:text-foreground transition-colors duration-150">
+            <Link href="/iletisim" className="px-3 py-1.5 text-[14px] text-foreground/60 hover:text-foreground transition-colors duration-150">
               İletişim
             </Link>
             <Link
-              href="#"
+              href="/iletisim"
               className="ml-2 px-5 py-2 text-[13px] font-semibold text-white bg-accent hover:bg-accent-hover rounded-lg transition-all duration-200 glow-accent glow-accent-hover"
             >
               Teklif Alın
@@ -611,7 +613,7 @@ export default function Header() {
                             solutionsData.map((s) => (
                               <Link
                                 key={s.title}
-                                href="#"
+                                href={s.href || "#"}
                                 onClick={() => setMobileOpen(false)}
                                 className="flex items-center gap-3 py-3 px-2 rounded-lg active:bg-black/[0.03] transition-colors"
                               >
@@ -631,7 +633,7 @@ export default function Header() {
                             resourcesData.map((r) => (
                               <Link
                                 key={r.title}
-                                href="#"
+                                href={r.href || "#"}
                                 onClick={() => setMobileOpen(false)}
                                 className="flex items-center gap-3 py-3 px-2 rounded-lg active:bg-black/[0.03] transition-colors"
                               >
@@ -663,14 +665,14 @@ export default function Header() {
             {/* Mobile CTA — pinned to bottom */}
             <div className="flex-shrink-0 px-6 py-5 border-t border-black/[0.06] space-y-3 bg-white">
               <Link
-                href="#"
+                href="/iletisim"
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center px-5 py-3.5 text-[15px] font-semibold text-white bg-accent hover:bg-accent-hover rounded-xl transition-all duration-200 glow-accent"
               >
                 Teklif Alın
               </Link>
               <Link
-                href="#"
+                href="/iletisim"
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center px-5 py-3.5 text-[15px] font-semibold text-foreground glass-button rounded-xl transition-all duration-200"
               >

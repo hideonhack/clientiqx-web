@@ -128,7 +128,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <div className="max-w-xl">
-            <h1 className="font-serif text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
+            <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
               Her ekip için dönüştürücü yazılım çözümleri
             </h1>
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">

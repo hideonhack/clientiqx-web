@@ -6,70 +6,123 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#A16207";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function DanismanlikMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #D97706, #F59E0B)`,
         }}
       />
 
-      {/* Browser window */}
-      <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+      {/* Gantt chart / Timeline window */}
+      <div className="absolute top-[10%] left-[6%] w-[60%] h-[70%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
         <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
+          <div className="ml-3 h-4 w-28 bg-gray-200/80 rounded-full" />
         </div>
-        <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div
-              className="h-16 rounded-lg"
-              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
-            />
-            <div className="h-16 bg-foreground/[0.04] rounded-lg" />
+        <div className="p-4">
+          {/* Timeline header */}
+          <div className="flex gap-1 mb-3">
+            <div className="w-20 h-3 bg-foreground/8 rounded" />
+            <div className="flex-1 flex gap-0.5">
+              <div className="flex-1 h-3 bg-foreground/[0.04] rounded" />
+              <div className="flex-1 h-3 bg-foreground/[0.04] rounded" />
+              <div className="flex-1 h-3 bg-foreground/[0.04] rounded" />
+              <div className="flex-1 h-3 bg-foreground/[0.04] rounded" />
+              <div className="flex-1 h-3 bg-foreground/[0.04] rounded" />
+              <div className="flex-1 h-3 bg-foreground/[0.04] rounded" />
+            </div>
+          </div>
+          {/* Gantt bars */}
+          <div className="space-y-2.5">
+            <div className="flex items-center gap-1">
+              <div className="w-20 h-2 bg-foreground/8 rounded" />
+              <div className="flex-1 flex">
+                <div className="w-[45%] h-5 rounded-md" style={{ backgroundColor: `${SERVICE_COLOR}40` }} />
+              </div>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-20 h-2 bg-foreground/6 rounded" />
+              <div className="flex-1 flex pl-[15%]">
+                <div className="w-[35%] h-5 rounded-md" style={{ backgroundColor: `${SERVICE_COLOR}30` }} />
+              </div>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-20 h-2 bg-foreground/6 rounded" />
+              <div className="flex-1 flex pl-[30%]">
+                <div className="w-[50%] h-5 rounded-md" style={{ backgroundColor: `${SERVICE_COLOR}50` }} />
+              </div>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-20 h-2 bg-foreground/6 rounded" />
+              <div className="flex-1 flex pl-[50%]">
+                <div className="w-[30%] h-5 rounded-md" style={{ backgroundColor: `${SERVICE_COLOR}35` }} />
+              </div>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-20 h-2 bg-foreground/6 rounded" />
+              <div className="flex-1 flex pl-[60%]">
+                <div className="w-[35%] h-5 rounded-md" style={{ backgroundColor: `${SERVICE_COLOR}45` }} />
+              </div>
+            </div>
+          </div>
+          {/* Milestone markers */}
+          <div className="flex mt-3 pl-20">
+            <div className="flex-1 flex items-center justify-around">
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: `${SERVICE_COLOR}70` }} />
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: `${SERVICE_COLOR}70` }} />
+              <div className="w-3 h-3 rotate-45" style={{ backgroundColor: `${SERVICE_COLOR}70` }} />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
+      {/* Strategy card */}
+      <div className="absolute top-[18%] right-[5%] w-[38%] h-[45%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+        <div className="h-7 bg-gray-100/90 flex items-center px-3">
+          <div className="h-3 w-14 bg-gray-200/80 rounded" />
         </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
+        <div className="p-3 space-y-2">
+          {/* Progress indicators */}
+          <div className="space-y-2">
+            <div>
+              <div className="flex justify-between mb-1">
+                <div className="h-2 w-12 bg-foreground/8 rounded" />
+                <div className="h-2 w-6 bg-foreground/6 rounded" />
+              </div>
+              <div className="h-2 bg-foreground/[0.06] rounded-full">
+                <div className="h-2 rounded-full w-[85%]" style={{ backgroundColor: `${SERVICE_COLOR}60` }} />
+              </div>
+            </div>
+            <div>
+              <div className="flex justify-between mb-1">
+                <div className="h-2 w-14 bg-foreground/8 rounded" />
+                <div className="h-2 w-6 bg-foreground/6 rounded" />
+              </div>
+              <div className="h-2 bg-foreground/[0.06] rounded-full">
+                <div className="h-2 rounded-full w-[60%]" style={{ backgroundColor: `${SERVICE_COLOR}50` }} />
+              </div>
+            </div>
+            <div>
+              <div className="flex justify-between mb-1">
+                <div className="h-2 w-10 bg-foreground/8 rounded" />
+                <div className="h-2 w-6 bg-foreground/6 rounded" />
+              </div>
+              <div className="h-2 bg-foreground/[0.06] rounded-full">
+                <div className="h-2 rounded-full w-[40%]" style={{ backgroundColor: `${SERVICE_COLOR}40` }} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -103,19 +156,18 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                Danışmanlık
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              Dijital dönüşüm stratejinizi birlikte oluşturalım
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              Teknoloji seçimi, proje planlama ve ekip yapılandırmasından süreç
+              iyileştirmeye kadar dijital dönüşüm yolculuğunuzda yanınızdayız.
+              Doğru strateji ile yatırımınızın geri dönüşünü maksimize edin.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +213,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <DanismanlikMockUI />
             </div>
           </div>
         </div>
@@ -176,47 +228,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "strategy",
+    title: "Dijital Dönüşüm Stratejisi",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "Mevcut durumunuzu analiz ediyor, dijital olgunluk haritanızı çıkarıyoruz.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "tech",
+    title: "Teknoloji Danışmanlığı",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Doğru teknoloji yığını seçimi, mimari kararlar ve vendor değerlendirme.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "project",
+    title: "Proje Yönetimi",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "Agile/Scrum metodolojileri ile proje planlama, takip ve risk yönetimi.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "process",
+    title: "Süreç İyileştirme",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "İş süreçlerinizi analiz ediyor, verimlilik artışı için optimizasyonlar öneriyoruz.",
   },
   {
-    icon: "api",
-    title: "API & Backend Geliştirme",
+    icon: "team",
+    title: "Ekip Oluşturma & Mentorluk",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Teknik ekip kurulumu, yetenek değerlendirme ve geliştirici mentorluk programları.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "security",
+    title: "Güvenlik & Uyumluluk",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "KVKK, ISO 27001 ve SOC 2 uyumluluk danışmanlığı ve güvenlik denetimleri.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
+    case "strategy":
       return (
         <svg
           width="24"
@@ -227,59 +279,12 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          <path d="M2 20h20M5 20V10l4-6h6l4 6v10" />
+          <path d="M9 20v-4h6v4" />
+          <circle cx="12" cy="11" r="2" />
         </svg>
       );
-    case "saas":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <rect x="3" y="3" width="18" height="18" rx="3" />
-          <path d="M3 9h18M9 3v18" />
-          <circle cx="15" cy="15" r="2" />
-        </svg>
-      );
-    case "cart":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
-        </svg>
-      );
-    case "pwa":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
-        </svg>
-      );
-    case "api":
+    case "tech":
       return (
         <svg
           width="24"
@@ -295,7 +300,7 @@ function CapabilityIcon({ type }: { type: string }) {
           <line x1="14" y1="4" x2="10" y2="20" />
         </svg>
       );
-    case "performance":
+    case "project":
       return (
         <svg
           width="24"
@@ -306,7 +311,55 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <path d="M16 2v4M8 2v4M3 10h18" />
+          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      );
+    case "process":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      );
+    case "team":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+        </svg>
+      );
+    case "security":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     default:
@@ -329,11 +382,11 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Dijital dönüşümde kapsamlı danışmanlık
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          Strateji belirleme, teknoloji seçimi ve ekip yapılandırmasından
+          güvenlik uyumluluğuna kadar her aşamada uzman desteği sunuyoruz.
         </p>
 
         {/* 3x2 grid */}
@@ -377,62 +430,6 @@ function TechIcon({ name }: { name: string }) {
     "w-9 h-9 rounded-lg border border-black/[0.08] flex items-center justify-center bg-white shadow-sm";
 
   const icons: Record<string, { color: string; svg: React.ReactNode }> = {
-    react: {
-      color: "#61DAFB",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="2.5" fill="#61DAFB" />
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" />
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(60 12 12)" />
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(120 12 12)" />
-        </svg>
-      ),
-    },
-    next: {
-      color: "#000",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="10" fill="#000" />
-          <path d="M16.5 18.5L10 10v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-          <path d="M14 8v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      ),
-    },
-    node: {
-      color: "#339933",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" fillOpacity="0.15" stroke="#339933" strokeWidth="1.3" />
-          <text x="12" y="15" textAnchor="middle" fill="#339933" fontSize="9" fontWeight="bold">JS</text>
-        </svg>
-      ),
-    },
-    typescript: {
-      color: "#3178C6",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6" />
-          <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">TS</text>
-        </svg>
-      ),
-    },
-    tailwind: {
-      color: "#06B6D4",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
-          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
-        </svg>
-      ),
-    },
-    python: {
-      color: "#3776AB",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2c-3 0-5 1-5 3.5V8h5v1H6c-2 0-4 1.5-4 4.5S4 18 6 18h2v-2.5c0-2 1.5-3.5 3.5-3.5h5c1.5 0 3-1 3-2.5V5.5C19.5 3 17 2 12 2zm-2.5 2a1 1 0 110 2 1 1 0 010-2z" fill="#3776AB" />
-          <path d="M12 22c3 0 5-1 5-3.5V16h-5v-1h6c2 0 4-1.5 4-4.5S20 6 18 6h-2v2.5c0 2-1.5 3.5-3.5 3.5h-5c-1.5 0-3 1-3 2.5v4.5C4.5 21 7 22 12 22zm2.5-2a1 1 0 110-2 1 1 0 010 2z" fill="#FFD43B" />
-        </svg>
-      ),
-    },
     aws: {
       color: "#FF9900",
       svg: (
@@ -457,6 +454,45 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
+    kubernetes: {
+      color: "#326CE5",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#326CE5" fillOpacity="0.15" stroke="#326CE5" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" stroke="#326CE5" strokeWidth="1.2" />
+          <path d="M12 9v-2M12 17v-2M9 12H7M17 12h-2M9.5 9.5L8 8M16 16l-1.5-1.5M9.5 14.5L8 16M16 8l-1.5 1.5" stroke="#326CE5" strokeWidth="0.8" strokeLinecap="round" />
+        </svg>
+      ),
+    },
+    terraform: {
+      color: "#7B42BC",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M1 4l7 4v8l-7-4V4z" fill="#7B42BC" fillOpacity="0.3" />
+          <path d="M9 8l7 4v8l-7-4V8z" fill="#7B42BC" />
+          <path d="M17 4l7 4v8l-7-4V4z" fill="#7B42BC" fillOpacity="0.6" />
+          <path d="M9 0l7 4v8l-7-4V0z" fill="#7B42BC" fillOpacity="0.45" />
+        </svg>
+      ),
+    },
+    python: {
+      color: "#3776AB",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2c-3 0-5 1-5 3.5V8h5v1H6c-2 0-4 1.5-4 4.5S4 18 6 18h2v-2.5c0-2 1.5-3.5 3.5-3.5h5c1.5 0 3-1 3-2.5V5.5C19.5 3 17 2 12 2zm-2.5 2a1 1 0 110 2 1 1 0 010-2z" fill="#3776AB" />
+          <path d="M12 22c3 0 5-1 5-3.5V16h-5v-1h6c2 0 4-1.5 4-4.5S20 6 18 6h-2v2.5c0 2-1.5 3.5-3.5 3.5h-5c-1.5 0-3 1-3 2.5v4.5C4.5 21 7 22 12 22zm2.5-2a1 1 0 110-2 1 1 0 010 2z" fill="#FFD43B" />
+        </svg>
+      ),
+    },
+    node: {
+      color: "#339933",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" fillOpacity="0.15" stroke="#339933" strokeWidth="1.3" />
+          <text x="12" y="15" textAnchor="middle" fill="#339933" fontSize="9" fontWeight="bold">JS</text>
+        </svg>
+      ),
+    },
     postgresql: {
       color: "#336791",
       svg: (
@@ -467,12 +503,12 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    stripe: {
-      color: "#635BFF",
+    typescript: {
+      color: "#3178C6",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="4" fill="#635BFF" />
-          <path d="M12.5 8c-2 0-3 .8-3 2.2 0 2.6 4 2 4 3.6 0 .6-.6 1-1.5 1-1.2 0-2.3-.5-3-1.2v2.2c.8.5 1.8.7 3 .7 2 0 3.2-.8 3.2-2.3 0-2.7-4-2-4-3.5 0-.5.5-.9 1.3-.9 1 0 2 .4 2.7 1V9c-.8-.6-1.8-.9-2.7-.9z" fill="#fff" />
+          <rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6" />
+          <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">TS</text>
         </svg>
       ),
     },
@@ -485,16 +521,14 @@ function TechIcon({ name }: { name: string }) {
 }
 
 const techStack = [
-  { name: "react", label: "React" },
-  { name: "next", label: "Next.js" },
-  { name: "node", label: "Node.js" },
-  { name: "typescript", label: "TypeScript" },
-  { name: "tailwind", label: "Tailwind CSS" },
-  { name: "python", label: "Python" },
   { name: "aws", label: "AWS" },
   { name: "docker", label: "Docker" },
+  { name: "kubernetes", label: "Kubernetes" },
+  { name: "terraform", label: "Terraform" },
+  { name: "python", label: "Python" },
+  { name: "node", label: "Node.js" },
   { name: "postgresql", label: "PostgreSQL" },
-  { name: "stripe", label: "Stripe" },
+  { name: "typescript", label: "TypeScript" },
 ];
 
 function TechStackSection() {
@@ -517,8 +551,8 @@ function TechStackSection() {
           </p>
         </div>
 
-        {/* 5-column grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        {/* 4-column grid for 8 techs */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {techStack.map((tech) => (
             <div
               key={tech.name}
@@ -543,33 +577,33 @@ function TechStackSection() {
 const processSteps = [
   {
     num: "01",
-    title: "Keşif",
+    title: "Değerlendirme",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "Mevcut altyapınızı, süreçlerinizi ve ekibinizi kapsamlı değerlendiriyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Strateji",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "İş hedeflerinize uygun dijital dönüşüm stratejisi ve yol haritası oluşturuyoruz.",
   },
   {
     num: "03",
-    title: "Geliştirme",
+    title: "Yol Haritası",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "Önceliklendirme, bütçe planlaması ve milestone'ları belirliyoruz.",
   },
   {
     num: "04",
-    title: "Test",
+    title: "Uygulama",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Stratejiyi hayata geçiriyor, ekibinizle birlikte çalışıyoruz.",
   },
   {
     num: "05",
-    title: "Lansman",
+    title: "İzleme",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "Sonuçları ölçüyor, sürekli iyileştirme döngüsünü devam ettiriyoruz.",
   },
 ];
 
@@ -588,11 +622,11 @@ function ProcessTimeline() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Fikirden lansmanına, adım adım
+          Değerlendirmeden uygulamaya, adım adım
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Şeffaf ve sonuç odaklı danışmanlık sürecimiz ile dijital dönüşüm
+          yolculuğunuzu güvenle yönetiyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +681,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function DanismanlikContent() {
   return (
     <div className="min-h-screen">
       <Header />

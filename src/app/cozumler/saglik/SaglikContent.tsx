@@ -6,25 +6,25 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#10B981";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function SaglikMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #34D399, #6EE7B7)`,
         }}
       />
 
-      {/* Browser window */}
-      <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+      {/* Patient dashboard */}
+      <div className="absolute top-[10%] left-[6%] w-[55%] h-[68%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
         <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
@@ -32,45 +32,49 @@ function WebMockUI() {
           <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
         </div>
         <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          <div className="h-4 bg-foreground/8 rounded w-1/2" />
+          <div className="grid grid-cols-2 gap-2">
             <div
-              className="h-16 rounded-lg"
+              className="h-16 rounded-lg flex items-center justify-center"
               style={{ backgroundColor: `${SERVICE_COLOR}15` }}
-            />
+            >
+              <div className="w-8 h-8 rounded-full" style={{ backgroundColor: `${SERVICE_COLOR}30` }} />
+            </div>
             <div className="h-16 bg-foreground/[0.04] rounded-lg" />
           </div>
+          <div className="h-3 bg-foreground/5 rounded w-full" />
+          <div className="h-3 bg-foreground/5 rounded w-3/4" />
+          <div className="h-12 bg-foreground/[0.03] rounded-lg" />
         </div>
       </div>
 
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
-        </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
+      {/* Appointment card */}
+      <div className="absolute top-[18%] right-[5%] w-[40%] h-[50%] bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+        <div className="p-4 space-y-3">
+          <div className="h-3 bg-foreground/8 rounded w-2/3" />
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <div
+                className="w-8 h-8 rounded-lg"
+                style={{ backgroundColor: `${SERVICE_COLOR}20` }}
+              />
+              <div className="flex-1 space-y-1">
+                <div className="h-2 bg-foreground/8 rounded w-3/4" />
+                <div className="h-2 bg-foreground/5 rounded w-1/2" />
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div
+                className="w-8 h-8 rounded-lg"
+                style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+              />
+              <div className="flex-1 space-y-1">
+                <div className="h-2 bg-foreground/8 rounded w-2/3" />
+                <div className="h-2 bg-foreground/5 rounded w-1/2" />
+              </div>
+            </div>
           </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
-          </div>
+          <div className="mt-2 h-8 rounded-lg" style={{ backgroundColor: `${SERVICE_COLOR}15` }} />
         </div>
       </div>
 
@@ -103,19 +107,19 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                Sağlık Çözümleri
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              Sağlık hizmetlerinde dijital dönüşüm
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              Randevu yönetimi, hasta takip sistemleri, tele-tıp platformları ve
+              sağlık veri analitiği ile sağlık kuruluşlarının dijital
+              dönüşümünü destekliyoruz. KVKK ve sağlık veri güvenliği
+              standartlarına tam uyum.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +165,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <SaglikMockUI />
             </div>
           </div>
         </div>
@@ -176,47 +180,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "appointment",
+    title: "Randevu Yönetimi",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "Online randevu, otomatik hatırlatma ve doktor müsaitlik yönetimi.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "patient",
+    title: "Hasta Takip Sistemi",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Elektronik sağlık kayıtları, tedavi geçmişi ve ilaç takibi.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "telemedicine",
+    title: "Tele-Tıp Platformu",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "Video görüşme, uzaktan muayene ve dijital reçete altyapıları.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "analytics",
+    title: "Sağlık Veri Analitiği",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "Hasta verileri üzerinden tahminleme, trend analizi ve raporlama.",
   },
   {
-    icon: "api",
-    title: "API & Backend Geliştirme",
+    icon: "prescription",
+    title: "Reçete & İlaç Yönetimi",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Dijital reçete, ilaç etkileşim kontrolü ve eczane entegrasyonu.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "security",
+    title: "KVKK Uyumlu Altyapı",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "Kişisel sağlık verisi güvenliği, şifreleme ve erişim kontrolü.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
+    case "appointment":
       return (
         <svg
           width="24"
@@ -227,11 +231,14 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+          <path d="M10 15l2 2 4-4" />
         </svg>
       );
-    case "saas":
+    case "patient":
       return (
         <svg
           width="24"
@@ -242,12 +249,12 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="3" y="3" width="18" height="18" rx="3" />
-          <path d="M3 9h18M9 3v18" />
-          <circle cx="15" cy="15" r="2" />
+          <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
+          <rect x="8" y="2" width="8" height="4" rx="1" />
+          <path d="M12 11v4M10 13h4" />
         </svg>
       );
-    case "cart":
+    case "telemedicine":
       return (
         <svg
           width="24"
@@ -258,12 +265,13 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+          <circle cx="12" cy="10" r="3" />
         </svg>
       );
-    case "pwa":
+    case "analytics":
       return (
         <svg
           width="24"
@@ -274,12 +282,10 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
+          <path d="M18 20V10M12 20V4M6 20v-6" />
         </svg>
       );
-    case "api":
+    case "prescription":
       return (
         <svg
           width="24"
@@ -290,12 +296,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-          <line x1="14" y1="4" x2="10" y2="20" />
+          <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v6m0 0H3m6 0h12M3 9v10a2 2 0 002 2h14a2 2 0 002-2V9" />
+          <path d="M9 14l2 2 4-4" />
         </svg>
       );
-    case "performance":
+    case "security":
       return (
         <svg
           width="24"
@@ -306,7 +311,8 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
         </svg>
       );
     default:
@@ -329,11 +335,11 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Sağlık sektörüne özel teknoloji çözümleri
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          Hastanelerden kliniklere, eczanelerden laboratuvarlara kadar sağlık
+          kuruluşlarının ihtiyaçlarına uygun, güvenli ve uyumlu çözümler sunuyoruz.
         </p>
 
         {/* 3x2 grid */}
@@ -388,16 +394,6 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    next: {
-      color: "#000",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="10" fill="#000" />
-          <path d="M16.5 18.5L10 10v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-          <path d="M14 8v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      ),
-    },
     node: {
       color: "#339933",
       svg: (
@@ -407,20 +403,22 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
+    postgresql: {
+      color: "#336791",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="7" rx="8" ry="4" stroke="#336791" strokeWidth="1.3" />
+          <path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7" stroke="#336791" strokeWidth="1.3" />
+          <path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4" stroke="#336791" strokeWidth="1.3" />
+        </svg>
+      ),
+    },
     typescript: {
       color: "#3178C6",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6" />
           <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">TS</text>
-        </svg>
-      ),
-    },
-    tailwind: {
-      color: "#06B6D4",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
-          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
         </svg>
       ),
     },
@@ -457,22 +455,34 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    postgresql: {
-      color: "#336791",
+    next: {
+      color: "#000",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <ellipse cx="12" cy="7" rx="8" ry="4" stroke="#336791" strokeWidth="1.3" />
-          <path d="M4 7v10c0 2.2 3.6 4 8 4s8-1.8 8-4V7" stroke="#336791" strokeWidth="1.3" />
-          <path d="M4 12c0 2.2 3.6 4 8 4s8-1.8 8-4" stroke="#336791" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="10" fill="#000" />
+          <path d="M16.5 18.5L10 10v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M14 8v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
       ),
     },
-    stripe: {
-      color: "#635BFF",
+    kubernetes: {
+      color: "#326CE5",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="4" fill="#635BFF" />
-          <path d="M12.5 8c-2 0-3 .8-3 2.2 0 2.6 4 2 4 3.6 0 .6-.6 1-1.5 1-1.2 0-2.3-.5-3-1.2v2.2c.8.5 1.8.7 3 .7 2 0 3.2-.8 3.2-2.3 0-2.7-4-2-4-3.5 0-.5.5-.9 1.3-.9 1 0 2 .4 2.7 1V9c-.8-.6-1.8-.9-2.7-.9z" fill="#fff" />
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#326CE5" fillOpacity="0.15" stroke="#326CE5" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" stroke="#326CE5" strokeWidth="1.2" />
+          <path d="M12 9v-2M12 17v-2M9.5 10.5L8 9M16 15l-1.5-1.5M9.5 13.5L8 15M16 9l-1.5 1.5" stroke="#326CE5" strokeWidth="1" strokeLinecap="round" />
+        </svg>
+      ),
+    },
+    terraform: {
+      color: "#7B42BC",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M1 4.5l7 4v8l-7-4z" fill="#7B42BC" fillOpacity="0.4" />
+          <path d="M9 0.5l7 4v8l-7-4z" fill="#7B42BC" fillOpacity="0.7" />
+          <path d="M17 4.5l7 4v8l-7-4z" fill="#7B42BC" fillOpacity="0.4" />
+          <path d="M9 13.5l7 4v8l-7-4z" fill="#7B42BC" />
         </svg>
       ),
     },
@@ -486,15 +496,15 @@ function TechIcon({ name }: { name: string }) {
 
 const techStack = [
   { name: "react", label: "React" },
-  { name: "next", label: "Next.js" },
   { name: "node", label: "Node.js" },
+  { name: "postgresql", label: "PostgreSQL" },
   { name: "typescript", label: "TypeScript" },
-  { name: "tailwind", label: "Tailwind CSS" },
   { name: "python", label: "Python" },
   { name: "aws", label: "AWS" },
   { name: "docker", label: "Docker" },
-  { name: "postgresql", label: "PostgreSQL" },
-  { name: "stripe", label: "Stripe" },
+  { name: "next", label: "Next.js" },
+  { name: "kubernetes", label: "Kubernetes" },
+  { name: "terraform", label: "Terraform" },
 ];
 
 function TechStackSection() {
@@ -543,33 +553,33 @@ function TechStackSection() {
 const processSteps = [
   {
     num: "01",
-    title: "Keşif",
+    title: "Süreç Analizi",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "Mevcut sağlık süreçlerinizi ve dijital altyapınızı değerlendiriyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Uyumluluk",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "KVKK ve sağlık veri güvenliği gereksinimlerini karşılayan mimari tasarlıyoruz.",
   },
   {
     num: "03",
     title: "Geliştirme",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "Modüler yapıda, entegre sağlık yazılımları geliştiriyoruz.",
   },
   {
     num: "04",
     title: "Test",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Güvenlik testleri, yük testleri ve kullanıcı kabul testleri yapıyoruz.",
   },
   {
     num: "05",
-    title: "Lansman",
+    title: "Devreye Alma",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "Kademeli geçiş, personel eğitimi ve 7/24 teknik destek.",
   },
 ];
 
@@ -588,11 +598,11 @@ function ProcessTimeline() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Fikirden lansmanına, adım adım
+          Güvenli dijital dönüşüme giden yol
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Veri güvenliği ve regülasyon uyumluluğunu ön planda tutarak, sağlık
+          kuruluşunuza özel dijital çözümler geliştiriyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +657,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function SaglikContent() {
   return (
     <div className="min-h-screen">
       <Header />

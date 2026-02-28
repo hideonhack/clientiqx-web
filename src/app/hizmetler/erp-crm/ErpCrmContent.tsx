@@ -6,70 +6,99 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#6366F1";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function ErpCrmMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #818CF8, #A78BFA)`,
         }}
       />
 
-      {/* Browser window */}
-      <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+      {/* Dashboard window */}
+      <div className="absolute top-[10%] left-[6%] w-[58%] h-[70%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
         <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
           <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
           <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
+          <div className="ml-3 h-4 w-24 bg-gray-200/80 rounded-full" />
         </div>
         <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
+          {/* KPI row */}
+          <div className="grid grid-cols-3 gap-2">
             <div
-              className="h-16 rounded-lg"
-              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
-            />
-            <div className="h-16 bg-foreground/[0.04] rounded-lg" />
+              className="h-12 rounded-lg flex flex-col items-center justify-center"
+              style={{ backgroundColor: `${SERVICE_COLOR}12` }}
+            >
+              <div className="h-2 w-8 bg-foreground/10 rounded mb-1" />
+              <div className="h-3 w-10 rounded" style={{ backgroundColor: `${SERVICE_COLOR}40` }} />
+            </div>
+            <div className="h-12 bg-foreground/[0.04] rounded-lg flex flex-col items-center justify-center">
+              <div className="h-2 w-8 bg-foreground/10 rounded mb-1" />
+              <div className="h-3 w-10 bg-foreground/10 rounded" />
+            </div>
+            <div className="h-12 bg-foreground/[0.04] rounded-lg flex flex-col items-center justify-center">
+              <div className="h-2 w-8 bg-foreground/10 rounded mb-1" />
+              <div className="h-3 w-10 bg-foreground/10 rounded" />
+            </div>
+          </div>
+          {/* Data table rows */}
+          <div className="space-y-1.5 mt-2">
+            <div className="flex gap-2">
+              <div className="h-2 w-16 bg-foreground/8 rounded" />
+              <div className="h-2 w-12 bg-foreground/5 rounded" />
+              <div className="h-2 w-10 rounded" style={{ backgroundColor: `${SERVICE_COLOR}20` }} />
+              <div className="h-2 w-8 bg-foreground/5 rounded" />
+            </div>
+            <div className="flex gap-2">
+              <div className="h-2 w-16 bg-foreground/6 rounded" />
+              <div className="h-2 w-12 bg-foreground/5 rounded" />
+              <div className="h-2 w-10 bg-foreground/5 rounded" />
+              <div className="h-2 w-8 bg-foreground/5 rounded" />
+            </div>
+            <div className="flex gap-2">
+              <div className="h-2 w-16 bg-foreground/6 rounded" />
+              <div className="h-2 w-12 bg-foreground/5 rounded" />
+              <div className="h-2 w-10 rounded" style={{ backgroundColor: `${SERVICE_COLOR}20` }} />
+              <div className="h-2 w-8 bg-foreground/5 rounded" />
+            </div>
+            <div className="flex gap-2">
+              <div className="h-2 w-16 bg-foreground/6 rounded" />
+              <div className="h-2 w-12 bg-foreground/5 rounded" />
+              <div className="h-2 w-10 bg-foreground/5 rounded" />
+              <div className="h-2 w-8 bg-foreground/5 rounded" />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
+      {/* Chart panel */}
+      <div className="absolute top-[18%] right-[5%] w-[40%] h-[55%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
+        <div className="h-7 bg-gray-100/90 flex items-center px-3">
+          <div className="h-3 w-16 bg-gray-200/80 rounded" />
         </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
+        <div className="p-4">
+          {/* Bar chart */}
+          <div className="flex items-end gap-1.5 h-20">
+            <div className="w-4 h-6 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}30` }} />
+            <div className="w-4 h-10 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}50` }} />
+            <div className="w-4 h-14 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}70` }} />
+            <div className="w-4 h-8 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}40` }} />
+            <div className="w-4 h-16 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}60` }} />
+            <div className="w-4 h-20 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}90` }} />
+            <div className="w-4 h-12 rounded-sm" style={{ backgroundColor: `${SERVICE_COLOR}50` }} />
           </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
+          <div className="mt-3 space-y-1">
+            <div className="h-2 w-full bg-foreground/5 rounded" />
+            <div className="h-2 w-3/4 bg-foreground/5 rounded" />
           </div>
         </div>
       </div>
@@ -103,19 +132,18 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                ERP &amp; CRM
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              Kurumsal süreçlerinizi tek platformda yönetin
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              Özel ERP ve CRM çözümleri ile satış, stok, muhasebe ve müşteri
+              ilişkilerinizi entegre bir platformda yönetin. Veri silosu
+              sorunlarını ortadan kaldırın, gerçek zamanlı raporlarla karar alın.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +189,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <ErpCrmMockUI />
             </div>
           </div>
         </div>
@@ -176,62 +204,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "erp",
+    title: "Özel ERP Çözümleri",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "İş süreçlerinize özel modüler ERP sistemleri tasarlıyor ve geliştiriyoruz.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "crm",
+    title: "CRM Platformları",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Müşteri yaşam döngüsünü uçtan uca yöneten özel CRM platformları.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "bi",
+    title: "İş Zekası & Raporlama",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "Gerçek zamanlı dashboard'lar, KPI takibi ve otomatik raporlama araçları.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "integration",
+    title: "Entegrasyon & Migrasyon",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "Mevcut sistemlerinizi yeni platforma sorunsuz taşıyor, üçüncü parti entegrasyonlar yapıyoruz.",
   },
   {
-    icon: "api",
-    title: "API & Backend Geliştirme",
+    icon: "automation",
+    title: "Süreç Otomasyonu",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Tekrarlayan iş süreçlerini otomatikleştirerek operasyonel verimliliği artırıyoruz.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "support",
+    title: "Eğitim & Destek",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "Kullanıcı eğitimleri, teknik dokümantasyon ve sürekli destek hizmeti sunuyoruz.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
-      return (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          style={style}
-        >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-        </svg>
-      );
-    case "saas":
+    case "erp":
       return (
         <svg
           width="24"
@@ -247,7 +260,7 @@ function CapabilityIcon({ type }: { type: string }) {
           <circle cx="15" cy="15" r="2" />
         </svg>
       );
-    case "cart":
+    case "crm":
       return (
         <svg
           width="24"
@@ -258,12 +271,12 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
         </svg>
       );
-    case "pwa":
+    case "bi":
       return (
         <svg
           width="24"
@@ -274,12 +287,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
+          <path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" />
+          <path d="M2 20h20" />
         </svg>
       );
-    case "api":
+    case "integration":
       return (
         <svg
           width="24"
@@ -290,12 +302,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-          <line x1="14" y1="4" x2="10" y2="20" />
+          <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" strokeLinecap="round" />
+          <path d="M17 3l3 3-3 3" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
-    case "performance":
+    case "automation":
       return (
         <svg
           width="24"
@@ -306,7 +317,23 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      );
+    case "support":
+      return (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          style={style}
+        >
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+          <path d="M8 10h8M8 14h4" strokeLinecap="round" />
         </svg>
       );
     default:
@@ -329,11 +356,11 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Uçtan uca ERP &amp; CRM çözümleri
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          Satıştan muhasebeye, stoktan müşteri ilişkilerine kadar tüm iş
+          süreçlerinizi tek bir platformda yönetin.
         </p>
 
         {/* 3x2 grid */}
@@ -416,14 +443,6 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    tailwind: {
-      color: "#06B6D4",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
-          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
-        </svg>
-      ),
-    },
     python: {
       color: "#3776AB",
       svg: (
@@ -476,6 +495,16 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
+    kubernetes: {
+      color: "#326CE5",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#326CE5" fillOpacity="0.15" stroke="#326CE5" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" stroke="#326CE5" strokeWidth="1.2" />
+          <path d="M12 9v-2M12 17v-2M9 12H7M17 12h-2M9.5 9.5L8 8M16 16l-1.5-1.5M9.5 14.5L8 16M16 8l-1.5 1.5" stroke="#326CE5" strokeWidth="0.8" strokeLinecap="round" />
+        </svg>
+      ),
+    },
   };
 
   const icon = icons[name];
@@ -486,15 +515,15 @@ function TechIcon({ name }: { name: string }) {
 
 const techStack = [
   { name: "react", label: "React" },
-  { name: "next", label: "Next.js" },
   { name: "node", label: "Node.js" },
+  { name: "postgresql", label: "PostgreSQL" },
   { name: "typescript", label: "TypeScript" },
-  { name: "tailwind", label: "Tailwind CSS" },
   { name: "python", label: "Python" },
   { name: "aws", label: "AWS" },
   { name: "docker", label: "Docker" },
-  { name: "postgresql", label: "PostgreSQL" },
+  { name: "next", label: "Next.js" },
   { name: "stripe", label: "Stripe" },
+  { name: "kubernetes", label: "Kubernetes" },
 ];
 
 function TechStackSection() {
@@ -543,33 +572,33 @@ function TechStackSection() {
 const processSteps = [
   {
     num: "01",
-    title: "Keşif",
+    title: "Süreç Analizi",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "Mevcut iş süreçlerinizi haritalıyor, darboğazları ve iyileştirme fırsatlarını belirliyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Mimari Tasarım",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "Modüler ve ölçeklenebilir sistem mimarisini planlıyoruz.",
   },
   {
     num: "03",
     title: "Geliştirme",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "Sprint bazlı geliştirme ile modülleri teker teker hayata geçiriyoruz.",
   },
   {
     num: "04",
-    title: "Test",
+    title: "Veri Aktarımı",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Mevcut verilerinizi güvenli şekilde yeni sisteme taşıyoruz.",
   },
   {
     num: "05",
-    title: "Lansman",
+    title: "Canlıya Geçiş",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "Eğitim, paralel çalışma ve sorunsuz geçiş ile sistemi devreye alıyoruz.",
   },
 ];
 
@@ -588,11 +617,11 @@ function ProcessTimeline() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Fikirden lansmanına, adım adım
+          Analizden canlıya, adım adım
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Şeffaf ve öngörülebilir bir süreç ile ERP &amp; CRM projenizi
+          zamanında ve bütçe dahilinde teslim ediyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +676,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function ErpCrmContent() {
   return (
     <div className="min-h-screen">
       <Header />

@@ -101,7 +101,7 @@ export default function AIUseCases() {
         </div>
 
         {/* Headline */}
-        <h2 className="font-serif text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
+        <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
           Gerçek ekipler, gerçek AI
           <br className="hidden lg:block" /> çözümleri, gerçek sonuçlar
         </h2>
@@ -134,7 +134,7 @@ export default function AIUseCases() {
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 mb-10">
           {/* Left: Headline + Link */}
           <div>
-            <h3 className="font-serif text-[30px] lg:text-[38px] leading-[1.12] tracking-[-0.01em] text-foreground mb-5">
+            <h3 className="font-bold text-[30px] lg:text-[38px] leading-[1.12] tracking-[-0.01em] text-foreground mb-5">
               {current.headline}
             </h3>
             <Link

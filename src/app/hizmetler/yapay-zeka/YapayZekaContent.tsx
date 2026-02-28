@@ -6,72 +6,82 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
 /* ── Service color ────────────────────────────────────── */
-const SERVICE_COLOR = "#424874";
+const SERVICE_COLOR = "#F59E0B";
 
 /* ══════════════════════════════════════════════════════════
    Section 1 — ServiceHero
    ══════════════════════════════════════════════════════════ */
 
-function WebMockUI() {
+function AIMockUI() {
   return (
     <div className="relative w-full h-full">
       {/* Gradient background */}
       <div
         className="absolute inset-0 rounded-2xl opacity-20"
         style={{
-          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #60A5FA, #818CF8)`,
+          background: `linear-gradient(135deg, ${SERVICE_COLOR}, #FBBF24, #F97316)`,
         }}
       />
 
-      {/* Browser window */}
-      <div className="absolute top-[12%] left-[8%] w-[52%] h-[65%] bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-8 bg-gray-100/90 flex items-center gap-1.5 px-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-          <div className="ml-3 h-4 w-32 bg-gray-200/80 rounded-full" />
-        </div>
-        <div className="p-4 space-y-3">
-          <div className="h-4 bg-foreground/8 rounded w-3/4" />
-          <div className="h-3 bg-foreground/5 rounded w-full" />
-          <div className="h-3 bg-foreground/5 rounded w-2/3" />
-          <div className="mt-4 grid grid-cols-2 gap-2">
-            <div
-              className="h-16 rounded-lg"
-              style={{ backgroundColor: `${SERVICE_COLOR}15` }}
+      {/* Neural network visualization */}
+      <div className="absolute inset-[10%] flex items-center justify-center">
+        <svg viewBox="0 0 400 250" fill="none" className="w-full h-full opacity-80">
+          {/* Nodes */}
+          {[
+            [60, 50],
+            [60, 125],
+            [60, 200],
+            [170, 40],
+            [170, 95],
+            [170, 155],
+            [170, 210],
+            [280, 65],
+            [280, 125],
+            [280, 185],
+            [360, 100],
+            [360, 160],
+          ].map(([cx, cy], i) => (
+            <circle
+              key={i}
+              cx={cx}
+              cy={cy}
+              r={i >= 10 ? 12 : 9}
+              fill={i >= 10 ? SERVICE_COLOR : "white"}
+              fillOpacity={i >= 10 ? 0.8 : 0.7}
+              stroke={i >= 10 ? SERVICE_COLOR : "white"}
+              strokeWidth="1.5"
+              strokeOpacity={0.4}
             />
-            <div className="h-16 bg-foreground/[0.04] rounded-lg" />
-          </div>
-        </div>
-      </div>
-
-      {/* Code editor */}
-      <div className="absolute top-[20%] right-[6%] w-[42%] h-[50%] bg-[#1e1e2e]/90 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden">
-        <div className="h-7 bg-[#181825] flex items-center gap-1.5 px-3">
-          <div className="h-3 w-12 bg-white/10 rounded" />
-          <div className="h-3 w-10 bg-white/5 rounded" />
-        </div>
-        <div className="p-3 space-y-1.5">
-          <div className="flex gap-2">
-            <div className="h-2 w-8 bg-purple-400/30 rounded" />
-            <div className="h-2 w-14 bg-blue-400/25 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-10 bg-green-400/25 rounded" />
-            <div className="h-2 w-16 bg-yellow-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-3">
-            <div className="h-2 w-12 bg-cyan-400/25 rounded" />
-            <div className="h-2 w-8 bg-orange-400/20 rounded" />
-          </div>
-          <div className="flex gap-2 ml-6">
-            <div className="h-2 w-6 bg-pink-400/25 rounded" />
-            <div className="h-2 w-18 bg-blue-400/20 rounded" />
-          </div>
-          <div className="flex gap-2">
-            <div className="h-2 w-4 bg-purple-400/30 rounded" />
-          </div>
-        </div>
+          ))}
+          {/* Connections */}
+          {[
+            [60, 50, 170, 40],
+            [60, 50, 170, 95],
+            [60, 125, 170, 95],
+            [60, 125, 170, 155],
+            [60, 200, 170, 155],
+            [60, 200, 170, 210],
+            [170, 40, 280, 65],
+            [170, 95, 280, 125],
+            [170, 155, 280, 125],
+            [170, 155, 280, 185],
+            [170, 210, 280, 185],
+            [280, 65, 360, 100],
+            [280, 125, 360, 160],
+            [280, 185, 360, 160],
+          ].map(([x1, y1, x2, y2], i) => (
+            <line
+              key={i}
+              x1={x1}
+              y1={y1}
+              x2={x2}
+              y2={y2}
+              stroke={SERVICE_COLOR}
+              strokeWidth="1"
+              strokeOpacity={0.25}
+            />
+          ))}
+        </svg>
       </div>
 
       {/* Floating accent shape */}
@@ -103,19 +113,18 @@ function ServiceHero() {
                 style={{ backgroundColor: SERVICE_COLOR }}
               />
               <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-foreground/70">
-                Web Geliştirme
+                Yapay Zeka &amp; ML
               </span>
             </div>
 
             <h1 className="font-bold text-[44px] lg:text-[56px] leading-[1.08] tracking-[-0.02em] text-foreground animate-fade-in-up">
-              Modern web uygulamalarıyla dijital varlığınızı güçlendirin
+              Yapay zeka ile iş süreçlerinizi dönüştürün
             </h1>
 
             <p className="mt-6 text-[17px] leading-relaxed text-muted animate-fade-in-up-delay-1">
-              Kurumsal web sitelerinden SaaS platformlarına, e-ticaret
-              çözümlerinden progressive web app&apos;lere kadar geniş bir
-              yelpazede, performans odaklı ve ölçeklenebilir web uygulamaları
-              geliştiriyoruz.
+              Doğal dil işleme, bilgisayarlı görü, tahminleme modelleri ve AI
+              asistanları ile iş süreçlerinizi otomatikleştiriyor, verilerinizden
+              aksiyon alınabilir içgörüler üretiyoruz.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up-delay-2">
@@ -161,7 +170,7 @@ function ServiceHero() {
           {/* Right — Illustration */}
           <div className="hidden lg:block">
             <div className="relative w-full aspect-[4/3]">
-              <WebMockUI />
+              <AIMockUI />
             </div>
           </div>
         </div>
@@ -176,47 +185,47 @@ function ServiceHero() {
 
 const capabilities = [
   {
-    icon: "globe",
-    title: "Kurumsal Web Siteleri",
+    icon: "nlp",
+    title: "Doğal Dil İşleme",
     description:
-      "Markanızı dijitalde en iyi şekilde temsil eden, hızlı ve SEO dostu kurumsal web siteleri.",
+      "Metin analizi, duygu analizi ve çok dilli dil modelleri ile iletişimi otomatikleştirin.",
   },
   {
-    icon: "saas",
-    title: "SaaS Platformları",
+    icon: "vision",
+    title: "Bilgisayarlı Görü",
     description:
-      "Ölçeklenebilir mimari, çoklu kiracı yapısı ve abonelik yönetimi ile SaaS çözümleri.",
+      "Görüntü tanıma, nesne tespiti ve video analizi çözümleri.",
   },
   {
-    icon: "cart",
-    title: "E-Ticaret Çözümleri",
+    icon: "analytics",
+    title: "Tahminleme & Analitik",
     description:
-      "Güvenli ödeme entegrasyonu, stok yönetimi ve yüksek dönüşüm oranı için optimize edilmiş mağazalar.",
+      "Geçmiş verilerden geleceği öngören ML modelleri ve iş zekası.",
   },
   {
-    icon: "pwa",
-    title: "Progressive Web Apps",
+    icon: "chatbot",
+    title: "AI Chatbot & Asistanlar",
     description:
-      "Çevrimdışı çalışabilen, push bildirim destekli, mobil uygulama deneyimi sunan web uygulamaları.",
+      "7/24 müşteri desteği sunan akıllı sohbet botları ve sesli asistanlar.",
   },
   {
-    icon: "api",
-    title: "API & Backend Geliştirme",
+    icon: "automation",
+    title: "Süreç Otomasyonu",
     description:
-      "RESTful ve GraphQL API&apos;ler, mikroservis mimarisi ve güvenli backend altyapıları.",
+      "Tekrarlayan iş süreçlerini AI ile otomatikleştirerek verimliliği artırın.",
   },
   {
-    icon: "performance",
-    title: "Performans & SEO Optimizasyonu",
+    icon: "ml",
+    title: "Veri Bilimi & ML Modelleri",
     description:
-      "Core Web Vitals uyumlu, arama motorlarında üst sıralara çıkan performans optimizasyonları.",
+      "Özel makine öğrenmesi modelleri tasarlayın, eğitin ve deploy edin.",
   },
 ];
 
 function CapabilityIcon({ type }: { type: string }) {
   const style = { color: SERVICE_COLOR };
   switch (type) {
-    case "globe":
+    case "nlp":
       return (
         <svg
           width="24"
@@ -227,11 +236,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+          <path d="M8 9h8M8 13h4" />
         </svg>
       );
-    case "saas":
+    case "vision":
       return (
         <svg
           width="24"
@@ -242,12 +251,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="3" y="3" width="18" height="18" rx="3" />
-          <path d="M3 9h18M9 3v18" />
-          <circle cx="15" cy="15" r="2" />
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+          <circle cx="12" cy="12" r="3" />
         </svg>
       );
-    case "cart":
+    case "analytics":
       return (
         <svg
           width="24"
@@ -258,12 +266,12 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <circle cx="9" cy="21" r="1" />
-          <circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
+          <path d="M3 3v18h18" />
+          <path d="M7 16l4-4 4 2 6-8" />
+          <path d="M17 6h4v4" />
         </svg>
       );
-    case "pwa":
+    case "chatbot":
       return (
         <svg
           width="24"
@@ -274,12 +282,13 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <rect x="5" y="2" width="14" height="20" rx="2" />
-          <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
-          <path d="M9 8h6M9 11h6" />
+          <rect x="3" y="3" width="18" height="14" rx="3" />
+          <circle cx="9" cy="10" r="1.5" fill="currentColor" stroke="none" />
+          <circle cx="15" cy="10" r="1.5" fill="currentColor" stroke="none" />
+          <path d="M9 21l3-4 3 4" />
         </svg>
       );
-    case "api":
+    case "automation":
       return (
         <svg
           width="24"
@@ -290,12 +299,11 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-          <line x1="14" y1="4" x2="10" y2="20" />
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+          <circle cx="12" cy="12" r="4" />
         </svg>
       );
-    case "performance":
+    case "ml":
       return (
         <svg
           width="24"
@@ -306,7 +314,10 @@ function CapabilityIcon({ type }: { type: string }) {
           strokeWidth="1.5"
           style={style}
         >
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          <circle cx="6" cy="6" r="3" />
+          <circle cx="18" cy="6" r="3" />
+          <circle cx="12" cy="18" r="3" />
+          <path d="M8 8l4 8M16 8l-4 8M6 9v0M18 9v0" />
         </svg>
       );
     default:
@@ -329,11 +340,11 @@ function CapabilitiesGrid() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Her ihtiyaca uygun web çözümleri
+          Yapay zeka ile sınırları aşan çözümler
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Startup&apos;lardan kurumsal şirketlere, basit web sitelerinden
-          karmaşık SaaS platformlarına kadar her ölçekte çözüm üretiyoruz.
+          İş süreçlerinizi akıllı hale getiren, verilerinizden değer üreten
+          kapsamlı AI ve makine öğrenmesi çözümleri sunuyoruz.
         </p>
 
         {/* 3x2 grid */}
@@ -377,59 +388,30 @@ function TechIcon({ name }: { name: string }) {
     "w-9 h-9 rounded-lg border border-black/[0.08] flex items-center justify-center bg-white shadow-sm";
 
   const icons: Record<string, { color: string; svg: React.ReactNode }> = {
-    react: {
-      color: "#61DAFB",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="2.5" fill="#61DAFB" />
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" />
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(60 12 12)" />
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(120 12 12)" />
-        </svg>
-      ),
-    },
-    next: {
-      color: "#000",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="10" fill="#000" />
-          <path d="M16.5 18.5L10 10v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-          <path d="M14 8v8" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      ),
-    },
-    node: {
-      color: "#339933",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" fillOpacity="0.15" stroke="#339933" strokeWidth="1.3" />
-          <text x="12" y="15" textAnchor="middle" fill="#339933" fontSize="9" fontWeight="bold">JS</text>
-        </svg>
-      ),
-    },
-    typescript: {
-      color: "#3178C6",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6" />
-          <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">TS</text>
-        </svg>
-      ),
-    },
-    tailwind: {
-      color: "#06B6D4",
-      svg: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#06B6D4">
-          <path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C13.42 10.88 14.56 12 17 12c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C15.58 7.12 14.44 6 12 6zM7 12c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.3.74 1.9 1.35C8.42 16.88 9.56 18 12 18c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.3-.74-1.9-1.35C10.58 13.12 9.44 12 7 12z" />
-        </svg>
-      ),
-    },
     python: {
       color: "#3776AB",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <path d="M12 2c-3 0-5 1-5 3.5V8h5v1H6c-2 0-4 1.5-4 4.5S4 18 6 18h2v-2.5c0-2 1.5-3.5 3.5-3.5h5c1.5 0 3-1 3-2.5V5.5C19.5 3 17 2 12 2zm-2.5 2a1 1 0 110 2 1 1 0 010-2z" fill="#3776AB" />
           <path d="M12 22c3 0 5-1 5-3.5V16h-5v-1h6c2 0 4-1.5 4-4.5S20 6 18 6h-2v2.5c0 2-1.5 3.5-3.5 3.5h-5c-1.5 0-3 1-3 2.5v4.5C4.5 21 7 22 12 22zm2.5-2a1 1 0 110-2 1 1 0 010 2z" fill="#FFD43B" />
+        </svg>
+      ),
+    },
+    tensorflow: {
+      color: "#FF6F00",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L4 6v4l4-2v12l4 2V6l4 2V4l-4 2V2z" fill="#FF6F00" />
+          <path d="M12 22l4-2V10l4 2V8l-8-4v18z" fill="#FF6F00" fillOpacity="0.6" />
+        </svg>
+      ),
+    },
+    openai: {
+      color: "#000000",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M20.5 10.5c.4-2.5-1-5-3.5-5.8a5.5 5.5 0 00-6.6 2A5.3 5.3 0 003 9.5a5.5 5.5 0 00.8 6.3 5.5 5.5 0 003.5 5.8 5.5 5.5 0 006.6-2A5.3 5.3 0 0021 16.8a5.4 5.4 0 00-.5-6.3z" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 8v8M8 12h8" stroke="#000" strokeWidth="1.3" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -467,12 +449,42 @@ function TechIcon({ name }: { name: string }) {
         </svg>
       ),
     },
-    stripe: {
-      color: "#635BFF",
+    node: {
+      color: "#339933",
       svg: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="3" width="18" height="18" rx="4" fill="#635BFF" />
-          <path d="M12.5 8c-2 0-3 .8-3 2.2 0 2.6 4 2 4 3.6 0 .6-.6 1-1.5 1-1.2 0-2.3-.5-3-1.2v2.2c.8.5 1.8.7 3 .7 2 0 3.2-.8 3.2-2.3 0-2.7-4-2-4-3.5 0-.5.5-.9 1.3-.9 1 0 2 .4 2.7 1V9c-.8-.6-1.8-.9-2.7-.9z" fill="#fff" />
+          <path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z" fill="#339933" fillOpacity="0.15" stroke="#339933" strokeWidth="1.3" />
+          <text x="12" y="15" textAnchor="middle" fill="#339933" fontSize="9" fontWeight="bold">JS</text>
+        </svg>
+      ),
+    },
+    react: {
+      color: "#61DAFB",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="2.5" fill="#61DAFB" />
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" />
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" strokeWidth="1.2" transform="rotate(120 12 12)" />
+        </svg>
+      ),
+    },
+    kubernetes: {
+      color: "#326CE5",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" fill="#326CE5" fillOpacity="0.15" stroke="#326CE5" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" stroke="#326CE5" strokeWidth="1.2" />
+          <path d="M12 9v-2M12 17v-2M9.5 10.5L8 9M16 15l-1.5-1.5M9.5 13.5L8 15M16 9l-1.5 1.5" stroke="#326CE5" strokeWidth="1" strokeLinecap="round" />
+        </svg>
+      ),
+    },
+    typescript: {
+      color: "#3178C6",
+      svg: (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="3" fill="#3178C6" />
+          <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">TS</text>
         </svg>
       ),
     },
@@ -485,16 +497,16 @@ function TechIcon({ name }: { name: string }) {
 }
 
 const techStack = [
-  { name: "react", label: "React" },
-  { name: "next", label: "Next.js" },
-  { name: "node", label: "Node.js" },
-  { name: "typescript", label: "TypeScript" },
-  { name: "tailwind", label: "Tailwind CSS" },
   { name: "python", label: "Python" },
+  { name: "tensorflow", label: "TensorFlow" },
+  { name: "openai", label: "OpenAI" },
   { name: "aws", label: "AWS" },
   { name: "docker", label: "Docker" },
   { name: "postgresql", label: "PostgreSQL" },
-  { name: "stripe", label: "Stripe" },
+  { name: "node", label: "Node.js" },
+  { name: "react", label: "React" },
+  { name: "kubernetes", label: "Kubernetes" },
+  { name: "typescript", label: "TypeScript" },
 ];
 
 function TechStackSection() {
@@ -543,33 +555,33 @@ function TechStackSection() {
 const processSteps = [
   {
     num: "01",
-    title: "Keşif",
+    title: "Veri Analizi",
     description:
-      "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri derinlemesine analiz ediyoruz.",
+      "Mevcut verilerinizi inceliyor, kalitesini değerlendiriyor ve strateji belirliyoruz.",
   },
   {
     num: "02",
-    title: "Tasarım",
+    title: "Model Tasarımı",
     description:
-      "Kullanıcı deneyimi odaklı wireframe ve UI tasarımları oluşturuyor, onayınızı alıyoruz.",
+      "Problem için en uygun AI/ML mimarisini ve algoritmaları seçiyoruz.",
   },
   {
     num: "03",
-    title: "Geliştirme",
+    title: "Eğitim",
     description:
-      "Agile metodoloji ile sprint bazlı geliştirme yapıyor, düzenli demo sunuyoruz.",
+      "Modelleri eğitiyor, doğruluğunu test ediyor ve optimizasyonlar yapıyoruz.",
   },
   {
     num: "04",
-    title: "Test",
+    title: "Entegrasyon",
     description:
-      "Kapsamlı QA süreçleri, performans testleri ve güvenlik taramaları uyguluyoruz.",
+      "Eğitilmiş modelleri mevcut sistemlerinize sorunsuz entegre ediyoruz.",
   },
   {
     num: "05",
-    title: "Lansman",
+    title: "İzleme",
     description:
-      "Sorunsuz deployment, izleme ve lansman sonrası destek ile projeyi hayata geçiriyoruz.",
+      "Model performansını sürekli izliyor, güncelliyor ve iyileştiriyoruz.",
   },
 ];
 
@@ -588,11 +600,11 @@ function ProcessTimeline() {
           </span>
         </div>
         <h2 className="font-bold text-[40px] lg:text-[52px] leading-[1.08] tracking-[-0.02em] text-foreground max-w-3xl mb-5">
-          Fikirden lansmanına, adım adım
+          Veriden değere, adım adım
         </h2>
         <p className="text-[17px] text-muted leading-relaxed max-w-2xl mb-12">
-          Şeffaf ve öngörülebilir bir süreç ile projenizi zamanında ve bütçe
-          dahilinde teslim ediyoruz.
+          Şeffaf ve öngörülebilir bir süreç ile AI projelerinizi zamanında ve
+          bütçe dahilinde teslim ediyoruz.
         </p>
 
         {/* 5-column timeline */}
@@ -647,7 +659,7 @@ function ProcessTimeline() {
    Main Page Component
    ══════════════════════════════════════════════════════════ */
 
-export default function WebGelistirmeContent() {
+export default function YapayZekaContent() {
   return (
     <div className="min-h-screen">
       <Header />

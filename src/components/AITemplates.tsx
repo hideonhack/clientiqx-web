@@ -141,7 +141,7 @@ export default function AITemplates() {
         </div>
 
         {/* Headline */}
-        <h2 className="font-serif text-[32px] lg:text-[40px] leading-[1.1] tracking-[-0.01em] text-foreground mb-10">
+        <h2 className="font-bold text-[32px] lg:text-[40px] leading-[1.1] tracking-[-0.01em] text-foreground mb-10">
           AI şablonlarıyla hızlıca başlayın
         </h2>
 
